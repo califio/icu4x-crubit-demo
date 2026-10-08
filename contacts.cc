@@ -1,5 +1,6 @@
 #include "contacts.h"
 #include <algorithm>
+#include <charconv>
 #include <cstdio>
 #include <iostream>
 #include <stdexcept>
@@ -27,10 +28,12 @@ Request ParseArguments(int argc, char** argv, std::string_view backend) {
         std::string arg = argv[i];
         if (options && arg == "--") { options = false; continue; }
         if (options && (arg == "--help" || arg == "-h")) {
-            std::cout << "Usage: " << argv[0] << " [--locale LOCALE | --cve] [--stdin] [--] NAME...\n"
+            std::cout << "Usage: " << argv[0] << " [--locale LOCALE | --cve] [--stdin] [--benchmark N] [--] NAME...\n"
                          "With no names, sort the example contact list.\n"
                          "--cve uses the CVE-2021-30535 locale.\n"
                          "--stdin reads additional names, one per line.\n"
+                         "--benchmark N reports collator setup and N repeated sort timings as JSON.\n"
+                         "--benchmark-pairs N compares consecutive pairs of input names N times.\n"
                          "--version prints the backend version.\n";
             request.done = true;
             return request;
@@ -43,6 +46,16 @@ Request ParseArguments(int argc, char** argv, std::string_view backend) {
         if (options && arg == "--locale") {
             if (++i == argc) throw std::runtime_error("--locale requires a value");
             request.locale = argv[i];
+        } else if (options && (arg == "--benchmark" || arg == "--benchmark-pairs")) {
+            if (request.benchmark_iterations) throw std::runtime_error("Choose one benchmark mode");
+            request.benchmark_pairs = arg == "--benchmark-pairs";
+            if (++i == argc) throw std::runtime_error("--benchmark requires an iteration count");
+            const std::string_view count = argv[i];
+            const auto [end, error] = std::from_chars(
+                count.data(), count.data() + count.size(), request.benchmark_iterations);
+            if (error != std::errc{} || end != count.data() + count.size() ||
+                request.benchmark_iterations == 0)
+                throw std::runtime_error("--benchmark requires a positive integer");
         } else if (options && arg == "--cve") {
             trigger = true;
         } else if (options && arg == "--stdin") {
@@ -53,6 +66,8 @@ Request ParseArguments(int argc, char** argv, std::string_view backend) {
             request.names.push_back(std::move(arg));
         }
     }
+    if (trigger && request.benchmark_iterations)
+        throw std::runtime_error("--cve cannot be combined with --benchmark");
     if (trigger) request.locale = CveLocale();
     if (read_stdin)
         for (std::string line; std::getline(std::cin, line);)

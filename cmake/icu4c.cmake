@@ -13,10 +13,10 @@ if(NOT actual_locid_sha STREQUAL expected_locid_sha)
 endif()
 
 set(icu_install "${CMAKE_CURRENT_BINARY_DIR}/icu4c-install")
-set(icu_compile_flags "-O1 -g -fPIC")
+set(icu_compile_flags "-O3 -DNDEBUG -fPIC")
 set(icu_link_flags "")
 if(ENABLE_ASAN)
-  string(APPEND icu_compile_flags " -fsanitize=address -fno-omit-frame-pointer")
+  set(icu_compile_flags "-O1 -g -fPIC -fsanitize=address -fno-omit-frame-pointer")
   set(icu_link_flags "-fsanitize=address")
 endif()
 set(icu_env "CC=${CMAKE_C_COMPILER}" "CXX=${CMAKE_CXX_COMPILER}"

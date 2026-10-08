@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include <string>
 #include <string_view>
 #include <vector>
@@ -7,6 +8,8 @@ namespace contacts {
 struct Request {
     std::string locale = "de@collation=phonebook";
     std::vector<std::string> names;
+    std::uint32_t benchmark_iterations = 0;
+    bool benchmark_pairs = false;
     bool done = false;
 };
 Request ParseArguments(int argc, char** argv, std::string_view backend);

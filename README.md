@@ -60,6 +60,13 @@ from a file or pipe, use `--stdin`:
 printf '%s\n' Zimmermann Müller Andersson | ./build/icu4x-demo --stdin
 ```
 
+## Benchmark
+
+The [benchmark guide](benchmark/README.md) compares the same ICU4X adapter
+called directly from Rust and through Crubit from C++. It includes the measured
+results, reproduction commands, and additional ICU4C/ICU4X timing and memory
+comparisons. All benchmark sources and runners are under `benchmark/`.
+
 ## Code layout
 
 The layout follows the [safe-bindings examples](https://github.com/google/safe-bindings):
@@ -68,6 +75,7 @@ The layout follows the [safe-bindings examples](https://github.com/google/safe-b
 main.cc                 C++ application using the Rust-backed collator
 collation.h             Public C++ binding header
 contacts.cc/.h          CLI handling, locale compatibility, and example contacts
+benchmark/             Benchmark sources, runners, and documentation
 rust/lib.rs             Small Rust API around ICU4X
 rust/Cargo.toml          Rust crate definition
 CMakeLists.txt          Binding generation and example targets

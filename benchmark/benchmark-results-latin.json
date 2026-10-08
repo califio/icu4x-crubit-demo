@@ -1,0 +1,386 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "rustc": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)",
+  "versions": {
+    "icu4c-demo": "ICU4C 66.1",
+    "icu4x-demo": "ICU4X 2.3.1 through Crubit"
+  },
+  "build_type": "Release",
+  "asan": false,
+  "dataset": "latin",
+  "seed": 30535,
+  "words": 10000,
+  "iterations": 20,
+  "samples": 7,
+  "input_sha256": "fd33ada5109fa01bed6c0f32c679b4429ab13b78214082a515486ab6221a6dfb",
+  "results": [
+    {
+      "locale": "en-US",
+      "summary": {
+        "icu4c-demo": {
+          "median_ms_per_sort": 1.8647373500000002,
+          "min_ms_per_sort": 1.8484772,
+          "max_ms_per_sort": 1.88968745,
+          "median_setup_ms": 0.060458
+        },
+        "icu4x-demo": {
+          "median_ms_per_sort": 6.404202150000001,
+          "min_ms_per_sort": 6.3399291,
+          "max_ms_per_sort": 6.47012295,
+          "median_setup_ms": 0.019334
+        }
+      },
+      "icu4c_over_icu4x": 0.2911740301639292,
+      "raw_samples": {
+        "icu4c-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 61584,
+            "sort_ns": 37628624,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 64416,
+            "sort_ns": 36969544,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 56042,
+            "sort_ns": 37254502,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 60458,
+            "sort_ns": 37294747,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 56958,
+            "sort_ns": 37284333,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 61708,
+            "sort_ns": 37793749,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 54208,
+            "sort_ns": 37546544,
+            "checksum": 14662676177381811707
+          }
+        ],
+        "icu4x-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 25833,
+            "sort_ns": 126798582,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17792,
+            "sort_ns": 127872293,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19916,
+            "sort_ns": 128240874,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17708,
+            "sort_ns": 128084043,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19125,
+            "sort_ns": 129402459,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 24958,
+            "sort_ns": 128198294,
+            "checksum": 14662676177381811707
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19334,
+            "sort_ns": 127604750,
+            "checksum": 14662676177381811707
+          }
+        ]
+      }
+    },
+    {
+      "locale": "de@collation=phonebook",
+      "summary": {
+        "icu4c-demo": {
+          "median_ms_per_sort": 2.1409396000000003,
+          "min_ms_per_sort": 2.1036352999999997,
+          "max_ms_per_sort": 2.16496685,
+          "median_setup_ms": 0.062541
+        },
+        "icu4x-demo": {
+          "median_ms_per_sort": 7.7306313499999995,
+          "min_ms_per_sort": 7.68271465,
+          "max_ms_per_sort": 7.779014549999999,
+          "median_setup_ms": 0.019916
+        }
+      },
+      "icu4c_over_icu4x": 0.2769424000537809,
+      "raw_samples": {
+        "icu4c-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 62541,
+            "sort_ns": 42073584,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 65583,
+            "sort_ns": 43299337,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 56792,
+            "sort_ns": 42072706,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 65750,
+            "sort_ns": 43051583,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 59833,
+            "sort_ns": 42818792,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 62583,
+            "sort_ns": 42391832,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 58958,
+            "sort_ns": 43249878,
+            "checksum": 5634210169249299147
+          }
+        ],
+        "icu4x-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19709,
+            "sort_ns": 153654293,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 16958,
+            "sort_ns": 154185834,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 22625,
+            "sort_ns": 154786123,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17209,
+            "sort_ns": 155117626,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 23875,
+            "sort_ns": 154458333,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 21208,
+            "sort_ns": 154612627,
+            "checksum": 5634210169249299147
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19916,
+            "sort_ns": 155580291,
+            "checksum": 5634210169249299147
+          }
+        ]
+      }
+    },
+    {
+      "locale": "sv",
+      "summary": {
+        "icu4c-demo": {
+          "median_ms_per_sort": 1.95795415,
+          "min_ms_per_sort": 1.9039437,
+          "max_ms_per_sort": 1.973923,
+          "median_setup_ms": 0.059958
+        },
+        "icu4x-demo": {
+          "median_ms_per_sort": 7.0968792999999994,
+          "min_ms_per_sort": 7.03580835,
+          "max_ms_per_sort": 7.1217082000000005,
+          "median_setup_ms": 0.017708
+        }
+      },
+      "icu4c_over_icu4x": 0.2758894532699746,
+      "raw_samples": {
+        "icu4c-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 59958,
+            "sort_ns": 39478460,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 62458,
+            "sort_ns": 38078874,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 56416,
+            "sort_ns": 39381336,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 61708,
+            "sort_ns": 39159083,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 55250,
+            "sort_ns": 38320541,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 61042,
+            "sort_ns": 38841708,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 55041,
+            "sort_ns": 39231833,
+            "checksum": 13636424005753253983
+          }
+        ],
+        "icu4x-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17959,
+            "sort_ns": 141990667,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 16334,
+            "sort_ns": 142434164,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 18208,
+            "sort_ns": 140716167,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 15333,
+            "sort_ns": 141813584,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 26750,
+            "sort_ns": 142324874,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17292,
+            "sort_ns": 141422747,
+            "checksum": 13636424005753253983
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17708,
+            "sort_ns": 141937586,
+            "checksum": 13636424005753253983
+          }
+        ]
+      }
+    }
+  ]
+}

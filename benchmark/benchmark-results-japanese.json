@@ -1,0 +1,142 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "rustc": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)",
+  "versions": {
+    "icu4c-demo": "ICU4C 66.1",
+    "icu4x-demo": "ICU4X 2.3.1 through Crubit"
+  },
+  "build_type": "Release",
+  "asan": false,
+  "dataset": "japanese",
+  "seed": 30535,
+  "words": 10000,
+  "iterations": 20,
+  "samples": 7,
+  "input_sha256": "979c0bb2598d89d55e4f1b8edf509ea985aa8a52230abee7481a840a889677ee",
+  "results": [
+    {
+      "locale": "ja",
+      "summary": {
+        "icu4c-demo": {
+          "median_ms_per_sort": 2.9812186,
+          "min_ms_per_sort": 2.95030625,
+          "max_ms_per_sort": 2.99643135,
+          "median_setup_ms": 0.064083
+        },
+        "icu4x-demo": {
+          "median_ms_per_sort": 6.991939599999999,
+          "min_ms_per_sort": 6.9399084,
+          "max_ms_per_sort": 7.0245355,
+          "median_setup_ms": 0.017042
+        }
+      },
+      "icu4c_over_icu4x": 0.42637934114877085,
+      "raw_samples": {
+        "icu4c-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 69791,
+            "sort_ns": 59006125,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 64916,
+            "sort_ns": 59624372,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 60375,
+            "sort_ns": 59928627,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 68292,
+            "sort_ns": 59912542,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 60833,
+            "sort_ns": 59669166,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 63667,
+            "sort_ns": 59299167,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 64083,
+            "sort_ns": 59136877,
+            "checksum": 11270690310699081543
+          }
+        ],
+        "icu4x-demo": [
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17042,
+            "sort_ns": 139003752,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 20334,
+            "sort_ns": 138798168,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17750,
+            "sort_ns": 139838792,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 16125,
+            "sort_ns": 139985794,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 19750,
+            "sort_ns": 139876791,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 15959,
+            "sort_ns": 138798708,
+            "checksum": 11270690310699081543
+          },
+          {
+            "iterations": 20,
+            "names": 10000,
+            "setup_ns": 17000,
+            "sort_ns": 140490710,
+            "checksum": 11270690310699081543
+          }
+        ]
+      }
+    }
+  ]
+}

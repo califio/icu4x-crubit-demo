@@ -1,0 +1,858 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "rustc": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)",
+  "versions": {
+    "icu4c-demo": "ICU4C 66.1",
+    "icu4x-demo": "ICU4X 2.3.1 through Crubit"
+  },
+  "build_type": "Release",
+  "asan": false,
+  "pairs": 10000,
+  "iterations": 100,
+  "samples": 9,
+  "seed": 30535,
+  "results": [
+    {
+      "dataset": "short-ascii",
+      "locale": "en-US",
+      "input_sha256": "982434fda41d822d1d55c46f2e428b06bc338a24aaf57043f7e899b009f7becd",
+      "summary": {
+        "native-rust": {
+          "median_ns_per_pair": 33.193333,
+          "min_ns_per_pair": 32.57475,
+          "max_ns_per_pair": 40.641083
+        },
+        "crubit": {
+          "median_ns_per_pair": 34.061791,
+          "min_ns_per_pair": 33.008083,
+          "max_ns_per_pair": 35.920583
+        }
+      },
+      "crubit_over_rust": 1.0261636274971242,
+      "raw_samples": {
+        "native-rust": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 99208,
+            "compare_ns": 40641083,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7833,
+            "compare_ns": 32918750,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6917,
+            "compare_ns": 33576416,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8625,
+            "compare_ns": 32902167,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7125,
+            "compare_ns": 32771750,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8083,
+            "compare_ns": 33679250,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7083,
+            "compare_ns": 33193333,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8125,
+            "compare_ns": 33750208,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6792,
+            "compare_ns": 32574750,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          }
+        ],
+        "crubit": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 148458,
+            "compare_ns": 33187750,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 22208,
+            "compare_ns": 33911083,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 23833,
+            "compare_ns": 34061791,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 19417,
+            "compare_ns": 34837834,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 24792,
+            "compare_ns": 34855375,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 18584,
+            "compare_ns": 35920583,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 19542,
+            "compare_ns": 33008083,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 17334,
+            "compare_ns": 34081500,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 23209,
+            "compare_ns": 33433667,
+            "warmup_checksum": 2586699097955094141,
+            "checksum": 5443607844230673797
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "latin",
+      "locale": "en-US",
+      "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
+      "summary": {
+        "native-rust": {
+          "median_ns_per_pair": 49.313125,
+          "min_ns_per_pair": 47.970333,
+          "max_ns_per_pair": 49.838583
+        },
+        "crubit": {
+          "median_ns_per_pair": 50.557666,
+          "min_ns_per_pair": 49.1995,
+          "max_ns_per_pair": 51.633167
+        }
+      },
+      "crubit_over_rust": 1.0252375204370032,
+      "raw_samples": {
+        "native-rust": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8083,
+            "compare_ns": 49623125,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8417,
+            "compare_ns": 49838583,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6958,
+            "compare_ns": 49794791,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8417,
+            "compare_ns": 49313125,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7250,
+            "compare_ns": 49429708,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8208,
+            "compare_ns": 48734042,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6583,
+            "compare_ns": 48553000,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8250,
+            "compare_ns": 47970333,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6917,
+            "compare_ns": 48418125,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          }
+        ],
+        "crubit": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 23625,
+            "compare_ns": 50557666,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 26209,
+            "compare_ns": 51633167,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 22417,
+            "compare_ns": 50605708,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20042,
+            "compare_ns": 50925166,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 24209,
+            "compare_ns": 49895292,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 25583,
+            "compare_ns": 51250250,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 21292,
+            "compare_ns": 49199500,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 18417,
+            "compare_ns": 49578875,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20125,
+            "compare_ns": 49609917,
+            "warmup_checksum": 16929950719166745218,
+            "checksum": 8657342008622807565
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "latin",
+      "locale": "de-u-co-phonebk",
+      "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
+      "summary": {
+        "native-rust": {
+          "median_ns_per_pair": 52.92175,
+          "min_ns_per_pair": 52.567125,
+          "max_ns_per_pair": 54.540917
+        },
+        "crubit": {
+          "median_ns_per_pair": 54.705292,
+          "min_ns_per_pair": 53.96775,
+          "max_ns_per_pair": 55.214
+        }
+      },
+      "crubit_over_rust": 1.0337014932423814,
+      "raw_samples": {
+        "native-rust": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8166,
+            "compare_ns": 52921750,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8375,
+            "compare_ns": 53060375,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6584,
+            "compare_ns": 52567125,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8500,
+            "compare_ns": 52902041,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7291,
+            "compare_ns": 54540917,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8584,
+            "compare_ns": 52728750,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6250,
+            "compare_ns": 53199625,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 10125,
+            "compare_ns": 52833875,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7000,
+            "compare_ns": 53802875,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          }
+        ],
+        "crubit": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 47417,
+            "compare_ns": 54835375,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 17834,
+            "compare_ns": 54746083,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 25209,
+            "compare_ns": 55214000,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 24792,
+            "compare_ns": 54705292,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 29292,
+            "compare_ns": 54394875,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 29500,
+            "compare_ns": 55065541,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 25125,
+            "compare_ns": 53967750,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 21875,
+            "compare_ns": 54504541,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 25250,
+            "compare_ns": 54685958,
+            "warmup_checksum": 5820234158914367798,
+            "checksum": 5794594653998333733
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "japanese",
+      "locale": "ja",
+      "input_sha256": "1cd81873aa5aa3f3612553d054ebce45170997bff49d26fa7906f4ff9415266f",
+      "summary": {
+        "native-rust": {
+          "median_ns_per_pair": 53.358667,
+          "min_ns_per_pair": 52.867209,
+          "max_ns_per_pair": 53.992208
+        },
+        "crubit": {
+          "median_ns_per_pair": 55.026,
+          "min_ns_per_pair": 54.655625,
+          "max_ns_per_pair": 56.191834
+        }
+      },
+      "crubit_over_rust": 1.031247650920515,
+      "raw_samples": {
+        "native-rust": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7166,
+            "compare_ns": 53522000,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7209,
+            "compare_ns": 53992208,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 5708,
+            "compare_ns": 53255292,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7417,
+            "compare_ns": 53358667,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 5834,
+            "compare_ns": 53066958,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7542,
+            "compare_ns": 53837833,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 5750,
+            "compare_ns": 53872167,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7167,
+            "compare_ns": 53090708,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 5625,
+            "compare_ns": 52867209,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          }
+        ],
+        "crubit": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 17292,
+            "compare_ns": 54722709,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20417,
+            "compare_ns": 55419750,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 17250,
+            "compare_ns": 54939375,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 16333,
+            "compare_ns": 54858708,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 18708,
+            "compare_ns": 55026000,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 16292,
+            "compare_ns": 56191834,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 21583,
+            "compare_ns": 55073750,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 16458,
+            "compare_ns": 55669708,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 24084,
+            "compare_ns": 54655625,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "chinese",
+      "locale": "zh",
+      "input_sha256": "8c580ec65d314e65e2c44492765a5cb3cce24c169ecab7bc6d6281b8157c7f1d",
+      "summary": {
+        "native-rust": {
+          "median_ns_per_pair": 49.631334,
+          "min_ns_per_pair": 48.992,
+          "max_ns_per_pair": 50.529834
+        },
+        "crubit": {
+          "median_ns_per_pair": 50.610834,
+          "min_ns_per_pair": 49.904833,
+          "max_ns_per_pair": 51.611
+        }
+      },
+      "crubit_over_rust": 1.0197355162768744,
+      "raw_samples": {
+        "native-rust": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8625,
+            "compare_ns": 48992000,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8416,
+            "compare_ns": 49642500,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7334,
+            "compare_ns": 50262417,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8375,
+            "compare_ns": 49631334,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 6833,
+            "compare_ns": 50529834,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8958,
+            "compare_ns": 49310333,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8625,
+            "compare_ns": 49293583,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 8625,
+            "compare_ns": 49406083,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 7584,
+            "compare_ns": 49703125,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          }
+        ],
+        "crubit": [
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20500,
+            "compare_ns": 50396458,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 22166,
+            "compare_ns": 50382792,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 22000,
+            "compare_ns": 51053083,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 18500,
+            "compare_ns": 51611000,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 21917,
+            "compare_ns": 50892875,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20458,
+            "compare_ns": 50394417,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20375,
+            "compare_ns": 50610834,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 17375,
+            "compare_ns": 50974167,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 21500,
+            "compare_ns": 49904833,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          }
+        ]
+      }
+    }
+  ]
+}
