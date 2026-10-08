@@ -1,0 +1,20 @@
+{
+  "icu4c": {
+    "url": "https://github.com/unicode-org/icu/releases/download/release-66-1/icu4c-66_1-src.tgz",
+    "sha256": "52a3f2209ab95559c1cf0a14f24338001f389615bf00e2585ef3dbc43ecf0a2e",
+    "commit": "5f681ecbc75898a6484217b322f3883b6d1b2049",
+    "locid_sha256": "fb71b62ca1939675a50dedb2bb946ee0f9b049c13346c5e701dc7d12a11d126a"
+  },
+  "crubit": {
+    "url": "https://github.com/google/crubit.git",
+    "commit": "82db9c9008715743bef24ed8842ad64c667fd83a"
+  },
+  "corrosion": {
+    "url": "https://github.com/thunderseethe/corrosion.git",
+    "commit": "deddd3c0dbf9e6b551d3dd1d6437b8413d41940a"
+  },
+  "rust": {
+    "toolchain": "nightly-2026-09-07",
+    "commit": "5a2be9f5f075d31e3ca5526b5b029881ce441253"
+  }
+}
