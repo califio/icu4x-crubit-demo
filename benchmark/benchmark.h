@@ -1,7 +1,6 @@
 #pragma once
 #include "contacts.h"
 
-#include <algorithm>
 #include <chrono>
 #include <cstdint>
 #include <iostream>
@@ -14,21 +13,6 @@ using BenchmarkClock = std::chrono::steady_clock;
 
 inline auto Nanoseconds(BenchmarkClock::duration duration) {
     return std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count();
-}
-
-// FNV-1a over length-prefixed UTF-8 names, matching benchmark.py.
-inline std::uint64_t SortChecksum(const std::vector<std::string>& names) {
-    std::uint64_t hash = 14695981039346656037ULL;
-    const auto add = [&](std::uint8_t byte) {
-        hash = (hash ^ byte) * 1099511628211ULL;
-    };
-    for (const auto& name : names) {
-        const std::uint64_t size = name.size();
-        for (unsigned shift = 0; shift < 64; shift += 8)
-            add(static_cast<std::uint8_t>(size >> shift));
-        for (unsigned char byte : name) add(byte);
-    }
-    return hash;
 }
 
 template <typename Compare>
@@ -60,36 +44,4 @@ void ComparePairsAndPrint(const Request& request, Compare compare,
               << ",\"checksum\":" << checksum << "}\n";
 }
 
-template <typename Compare>
-void RunCollation(Request& request, Compare compare, BenchmarkClock::duration setup) {
-    if (request.benchmark_pairs) {
-        ComparePairsAndPrint(request, compare, setup);
-        return;
-    }
-    const auto less = [&](const auto& left, const auto& right) {
-        return compare(left, right) < 0;
-    };
-    if (!request.benchmark_iterations) {
-        std::stable_sort(request.names.begin(), request.names.end(), less);
-        Print(request.names);
-        return;
-    }
-
-    // Warm the collator and establish the expected result outside the timer.
-    auto expected = request.names;
-    std::stable_sort(expected.begin(), expected.end(), less);
-    BenchmarkClock::duration elapsed{};
-    for (std::uint32_t i = 0; i < request.benchmark_iterations; ++i) {
-        auto names = request.names;
-        const auto start = BenchmarkClock::now();
-        std::stable_sort(names.begin(), names.end(), less);
-        elapsed += BenchmarkClock::now() - start;
-        if (names != expected) throw std::runtime_error("Inconsistent sort result");
-    }
-    std::cout << "{\"iterations\":" << request.benchmark_iterations
-              << ",\"names\":" << request.names.size()
-              << ",\"setup_ns\":" << Nanoseconds(setup)
-              << ",\"sort_ns\":" << Nanoseconds(elapsed)
-              << ",\"checksum\":" << SortChecksum(expected) << "}\n";
-}
 }

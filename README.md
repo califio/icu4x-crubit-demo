@@ -62,10 +62,9 @@ printf '%s\n' Zimmermann Müller Andersson | ./build/icu4x-demo --stdin
 
 ## Benchmark
 
-The [benchmark guide](benchmark/README.md) compares the same ICU4X adapter
-called directly from Rust and through Crubit from C++. It includes the measured
-results, reproduction commands, and additional ICU4C/ICU4X timing and memory
-comparisons. All benchmark sources and runners are under `benchmark/`.
+The [benchmark guide](benchmark/README.md) compares the same Rust `Collator`
+adapter called from Rust and from C++ through Crubit. It includes the measured
+results and reproduction command. Benchmark files are under `benchmark/`.
 
 ## Code layout
 

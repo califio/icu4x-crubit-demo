@@ -4,7 +4,6 @@
   "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
   "rustc": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)",
   "versions": {
-    "icu4c-demo": "ICU4C 66.1",
     "icu4x-demo": "ICU4X 2.3.1 through Crubit"
   },
   "build_type": "Release",
@@ -13,6 +12,10 @@
   "iterations": 100,
   "samples": 9,
   "seed": 30535,
+  "paths": {
+    "native-rust": "Rust calls locale_collator::Collator directly",
+    "crubit": "C++ calls the same adapter through Crubit"
+  },
   "results": [
     {
       "dataset": "short-ascii",
@@ -20,88 +23,88 @@
       "input_sha256": "982434fda41d822d1d55c46f2e428b06bc338a24aaf57043f7e899b009f7becd",
       "summary": {
         "native-rust": {
-          "median_ns_per_pair": 33.193333,
-          "min_ns_per_pair": 32.57475,
-          "max_ns_per_pair": 40.641083
+          "median_ns_per_pair": 32.581417,
+          "min_ns_per_pair": 32.222125,
+          "max_ns_per_pair": 60.23975
         },
         "crubit": {
-          "median_ns_per_pair": 34.061791,
-          "min_ns_per_pair": 33.008083,
-          "max_ns_per_pair": 35.920583
+          "median_ns_per_pair": 33.178334,
+          "min_ns_per_pair": 32.117042,
+          "max_ns_per_pair": 34.69625
         }
       },
-      "crubit_over_rust": 1.0261636274971242,
+      "crubit_over_rust": 1.0183207808303734,
       "raw_samples": {
         "native-rust": [
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 99208,
-            "compare_ns": 40641083,
+            "setup_ns": 123291,
+            "compare_ns": 60239750,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7833,
-            "compare_ns": 32918750,
+            "setup_ns": 8250,
+            "compare_ns": 32752125,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6917,
-            "compare_ns": 33576416,
+            "setup_ns": 6625,
+            "compare_ns": 32950333,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8625,
-            "compare_ns": 32902167,
+            "setup_ns": 9250,
+            "compare_ns": 32348708,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7125,
-            "compare_ns": 32771750,
+            "setup_ns": 6750,
+            "compare_ns": 32755875,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8083,
-            "compare_ns": 33679250,
+            "setup_ns": 8250,
+            "compare_ns": 32541791,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7083,
-            "compare_ns": 33193333,
+            "setup_ns": 6708,
+            "compare_ns": 32222125,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8125,
-            "compare_ns": 33750208,
+            "setup_ns": 9875,
+            "compare_ns": 32581417,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6792,
-            "compare_ns": 32574750,
+            "setup_ns": 6125,
+            "compare_ns": 32428000,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           }
@@ -110,72 +113,72 @@
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 148458,
-            "compare_ns": 33187750,
+            "setup_ns": 177209,
+            "compare_ns": 34696250,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 22208,
-            "compare_ns": 33911083,
+            "setup_ns": 18583,
+            "compare_ns": 32117042,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 23833,
-            "compare_ns": 34061791,
+            "setup_ns": 18833,
+            "compare_ns": 33344750,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 19417,
-            "compare_ns": 34837834,
+            "setup_ns": 18083,
+            "compare_ns": 32648958,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 24792,
-            "compare_ns": 34855375,
+            "setup_ns": 18958,
+            "compare_ns": 32878458,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 18584,
-            "compare_ns": 35920583,
+            "setup_ns": 21166,
+            "compare_ns": 33920291,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 19542,
-            "compare_ns": 33008083,
+            "setup_ns": 20500,
+            "compare_ns": 32487583,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 17334,
-            "compare_ns": 34081500,
+            "setup_ns": 18000,
+            "compare_ns": 33705458,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 23209,
-            "compare_ns": 33433667,
+            "setup_ns": 18875,
+            "compare_ns": 33178334,
             "warmup_checksum": 2586699097955094141,
             "checksum": 5443607844230673797
           }
@@ -188,88 +191,88 @@
       "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
       "summary": {
         "native-rust": {
-          "median_ns_per_pair": 49.313125,
-          "min_ns_per_pair": 47.970333,
-          "max_ns_per_pair": 49.838583
+          "median_ns_per_pair": 48.623792,
+          "min_ns_per_pair": 48.138375,
+          "max_ns_per_pair": 48.955875
         },
         "crubit": {
-          "median_ns_per_pair": 50.557666,
-          "min_ns_per_pair": 49.1995,
-          "max_ns_per_pair": 51.633167
+          "median_ns_per_pair": 49.095125,
+          "min_ns_per_pair": 48.325708,
+          "max_ns_per_pair": 49.910291
         }
       },
-      "crubit_over_rust": 1.0252375204370032,
+      "crubit_over_rust": 1.0096934644669424,
       "raw_samples": {
         "native-rust": [
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8083,
-            "compare_ns": 49623125,
+            "setup_ns": 7916,
+            "compare_ns": 48623792,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8417,
-            "compare_ns": 49838583,
+            "setup_ns": 8375,
+            "compare_ns": 48379000,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6958,
-            "compare_ns": 49794791,
+            "setup_ns": 7125,
+            "compare_ns": 48897333,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8417,
-            "compare_ns": 49313125,
+            "setup_ns": 8416,
+            "compare_ns": 48685250,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7250,
-            "compare_ns": 49429708,
+            "setup_ns": 7000,
+            "compare_ns": 48138375,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8208,
-            "compare_ns": 48734042,
+            "setup_ns": 9291,
+            "compare_ns": 48955875,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6583,
-            "compare_ns": 48553000,
+            "setup_ns": 6750,
+            "compare_ns": 48308000,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8250,
-            "compare_ns": 47970333,
+            "setup_ns": 8375,
+            "compare_ns": 48556333,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6917,
-            "compare_ns": 48418125,
+            "setup_ns": 7292,
+            "compare_ns": 48656792,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           }
@@ -278,72 +281,72 @@
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 23625,
-            "compare_ns": 50557666,
+            "setup_ns": 19750,
+            "compare_ns": 48683459,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 26209,
-            "compare_ns": 51633167,
+            "setup_ns": 18125,
+            "compare_ns": 49618209,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 22417,
-            "compare_ns": 50605708,
+            "setup_ns": 23417,
+            "compare_ns": 49910291,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 20042,
-            "compare_ns": 50925166,
+            "setup_ns": 19042,
+            "compare_ns": 48862375,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 24209,
-            "compare_ns": 49895292,
+            "setup_ns": 25417,
+            "compare_ns": 48531708,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 25583,
-            "compare_ns": 51250250,
+            "setup_ns": 20375,
+            "compare_ns": 49288458,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 21292,
-            "compare_ns": 49199500,
+            "setup_ns": 23541,
+            "compare_ns": 49267292,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 18417,
-            "compare_ns": 49578875,
+            "setup_ns": 19959,
+            "compare_ns": 48325708,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 20125,
-            "compare_ns": 49609917,
+            "setup_ns": 21792,
+            "compare_ns": 49095125,
             "warmup_checksum": 16929950719166745218,
             "checksum": 8657342008622807565
           }
@@ -356,88 +359,88 @@
       "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
       "summary": {
         "native-rust": {
-          "median_ns_per_pair": 52.92175,
-          "min_ns_per_pair": 52.567125,
-          "max_ns_per_pair": 54.540917
+          "median_ns_per_pair": 53.096333,
+          "min_ns_per_pair": 52.609,
+          "max_ns_per_pair": 53.430125
         },
         "crubit": {
-          "median_ns_per_pair": 54.705292,
-          "min_ns_per_pair": 53.96775,
-          "max_ns_per_pair": 55.214
+          "median_ns_per_pair": 54.357375,
+          "min_ns_per_pair": 53.647708,
+          "max_ns_per_pair": 54.773375
         }
       },
-      "crubit_over_rust": 1.0337014932423814,
+      "crubit_over_rust": 1.0237500770533436,
       "raw_samples": {
         "native-rust": [
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8166,
-            "compare_ns": 52921750,
+            "setup_ns": 8542,
+            "compare_ns": 52649167,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8375,
-            "compare_ns": 53060375,
+            "setup_ns": 7333,
+            "compare_ns": 52609000,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6584,
-            "compare_ns": 52567125,
+            "setup_ns": 7209,
+            "compare_ns": 53061292,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8500,
-            "compare_ns": 52902041,
+            "setup_ns": 7500,
+            "compare_ns": 53096333,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7291,
-            "compare_ns": 54540917,
+            "setup_ns": 6333,
+            "compare_ns": 53430125,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8584,
-            "compare_ns": 52728750,
+            "setup_ns": 8416,
+            "compare_ns": 52696375,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6250,
-            "compare_ns": 53199625,
+            "setup_ns": 6375,
+            "compare_ns": 53383125,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 10125,
-            "compare_ns": 52833875,
+            "setup_ns": 7125,
+            "compare_ns": 53408083,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7000,
-            "compare_ns": 53802875,
+            "setup_ns": 6000,
+            "compare_ns": 53239958,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           }
@@ -446,72 +449,72 @@
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 47417,
-            "compare_ns": 54835375,
+            "setup_ns": 39500,
+            "compare_ns": 54380292,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 17834,
-            "compare_ns": 54746083,
+            "setup_ns": 18458,
+            "compare_ns": 53647708,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 25209,
-            "compare_ns": 55214000,
+            "setup_ns": 19708,
+            "compare_ns": 54568208,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 24792,
-            "compare_ns": 54705292,
+            "setup_ns": 23375,
+            "compare_ns": 54129750,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 29292,
-            "compare_ns": 54394875,
+            "setup_ns": 22333,
+            "compare_ns": 54274875,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 29500,
-            "compare_ns": 55065541,
+            "setup_ns": 18167,
+            "compare_ns": 53741458,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 25125,
-            "compare_ns": 53967750,
+            "setup_ns": 21083,
+            "compare_ns": 54525334,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 21875,
-            "compare_ns": 54504541,
+            "setup_ns": 19750,
+            "compare_ns": 54357375,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 25250,
-            "compare_ns": 54685958,
+            "setup_ns": 19958,
+            "compare_ns": 54773375,
             "warmup_checksum": 5820234158914367798,
             "checksum": 5794594653998333733
           }
@@ -524,88 +527,88 @@
       "input_sha256": "1cd81873aa5aa3f3612553d054ebce45170997bff49d26fa7906f4ff9415266f",
       "summary": {
         "native-rust": {
-          "median_ns_per_pair": 53.358667,
-          "min_ns_per_pair": 52.867209,
-          "max_ns_per_pair": 53.992208
+          "median_ns_per_pair": 53.731375,
+          "min_ns_per_pair": 53.384084,
+          "max_ns_per_pair": 54.191
         },
         "crubit": {
-          "median_ns_per_pair": 55.026,
-          "min_ns_per_pair": 54.655625,
-          "max_ns_per_pair": 56.191834
+          "median_ns_per_pair": 54.538541,
+          "min_ns_per_pair": 54.134375,
+          "max_ns_per_pair": 54.8085
         }
       },
-      "crubit_over_rust": 1.031247650920515,
+      "crubit_over_rust": 1.0150222472438124,
       "raw_samples": {
         "native-rust": [
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7166,
-            "compare_ns": 53522000,
+            "setup_ns": 6750,
+            "compare_ns": 53902583,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7209,
-            "compare_ns": 53992208,
+            "setup_ns": 6625,
+            "compare_ns": 53731375,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 5708,
-            "compare_ns": 53255292,
+            "setup_ns": 6625,
+            "compare_ns": 53686209,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7417,
-            "compare_ns": 53358667,
+            "setup_ns": 7917,
+            "compare_ns": 53396500,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 5834,
-            "compare_ns": 53066958,
+            "setup_ns": 6417,
+            "compare_ns": 54191000,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7542,
-            "compare_ns": 53837833,
+            "setup_ns": 6458,
+            "compare_ns": 53384084,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 5750,
-            "compare_ns": 53872167,
+            "setup_ns": 5542,
+            "compare_ns": 54052083,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7167,
-            "compare_ns": 53090708,
+            "setup_ns": 6875,
+            "compare_ns": 53673417,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 5625,
-            "compare_ns": 52867209,
+            "setup_ns": 5500,
+            "compare_ns": 54102375,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           }
@@ -614,16 +617,8 @@
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 17292,
-            "compare_ns": 54722709,
-            "warmup_checksum": 17999942895526681132,
-            "checksum": 15739244058920019189
-          },
-          {
-            "iterations": 100,
-            "pairs": 10000,
-            "setup_ns": 20417,
-            "compare_ns": 55419750,
+            "setup_ns": 23542,
+            "compare_ns": 54459625,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
@@ -631,55 +626,63 @@
             "iterations": 100,
             "pairs": 10000,
             "setup_ns": 17250,
-            "compare_ns": 54939375,
+            "compare_ns": 54134375,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 16333,
-            "compare_ns": 54858708,
+            "setup_ns": 18250,
+            "compare_ns": 54808500,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 18708,
-            "compare_ns": 55026000,
+            "setup_ns": 16084,
+            "compare_ns": 54764000,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 16292,
-            "compare_ns": 56191834,
+            "setup_ns": 17125,
+            "compare_ns": 54538541,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 21583,
-            "compare_ns": 55073750,
+            "setup_ns": 20375,
+            "compare_ns": 54486875,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 16458,
-            "compare_ns": 55669708,
+            "setup_ns": 16792,
+            "compare_ns": 54385541,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 24084,
-            "compare_ns": 54655625,
+            "setup_ns": 19292,
+            "compare_ns": 54561958,
+            "warmup_checksum": 17999942895526681132,
+            "checksum": 15739244058920019189
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 18625,
+            "compare_ns": 54544458,
             "warmup_checksum": 17999942895526681132,
             "checksum": 15739244058920019189
           }
@@ -692,88 +695,88 @@
       "input_sha256": "8c580ec65d314e65e2c44492765a5cb3cce24c169ecab7bc6d6281b8157c7f1d",
       "summary": {
         "native-rust": {
-          "median_ns_per_pair": 49.631334,
-          "min_ns_per_pair": 48.992,
-          "max_ns_per_pair": 50.529834
+          "median_ns_per_pair": 49.538667,
+          "min_ns_per_pair": 49.075916,
+          "max_ns_per_pair": 49.989084
         },
         "crubit": {
-          "median_ns_per_pair": 50.610834,
-          "min_ns_per_pair": 49.904833,
-          "max_ns_per_pair": 51.611
+          "median_ns_per_pair": 50.633042,
+          "min_ns_per_pair": 49.927375,
+          "max_ns_per_pair": 51.874083
         }
       },
-      "crubit_over_rust": 1.0197355162768744,
+      "crubit_over_rust": 1.0220913291833227,
       "raw_samples": {
         "native-rust": [
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8625,
-            "compare_ns": 48992000,
+            "setup_ns": 9000,
+            "compare_ns": 49142458,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8416,
-            "compare_ns": 49642500,
+            "setup_ns": 8666,
+            "compare_ns": 49937417,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7334,
-            "compare_ns": 50262417,
+            "setup_ns": 7292,
+            "compare_ns": 49989084,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8375,
-            "compare_ns": 49631334,
+            "setup_ns": 8333,
+            "compare_ns": 49397875,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 6833,
-            "compare_ns": 50529834,
+            "setup_ns": 7084,
+            "compare_ns": 49538667,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8958,
-            "compare_ns": 49310333,
+            "setup_ns": 8333,
+            "compare_ns": 49540541,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8625,
-            "compare_ns": 49293583,
+            "setup_ns": 7166,
+            "compare_ns": 49075916,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 8625,
-            "compare_ns": 49406083,
+            "setup_ns": 8750,
+            "compare_ns": 49546292,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 7584,
-            "compare_ns": 49703125,
+            "setup_ns": 7042,
+            "compare_ns": 49488000,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           }
@@ -782,48 +785,32 @@
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 20500,
-            "compare_ns": 50396458,
+            "setup_ns": 24416,
+            "compare_ns": 50924209,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 22166,
-            "compare_ns": 50382792,
+            "setup_ns": 19333,
+            "compare_ns": 51874083,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 22000,
-            "compare_ns": 51053083,
+            "setup_ns": 21750,
+            "compare_ns": 50633042,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 18500,
-            "compare_ns": 51611000,
-            "warmup_checksum": 17581698066250149768,
-            "checksum": 11210444024254992181
-          },
-          {
-            "iterations": 100,
-            "pairs": 10000,
-            "setup_ns": 21917,
-            "compare_ns": 50892875,
-            "warmup_checksum": 17581698066250149768,
-            "checksum": 11210444024254992181
-          },
-          {
-            "iterations": 100,
-            "pairs": 10000,
-            "setup_ns": 20458,
-            "compare_ns": 50394417,
+            "setup_ns": 17875,
+            "compare_ns": 51456459,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
@@ -831,23 +818,39 @@
             "iterations": 100,
             "pairs": 10000,
             "setup_ns": 20375,
-            "compare_ns": 50610834,
+            "compare_ns": 50616125,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 17375,
-            "compare_ns": 50974167,
+            "setup_ns": 19208,
+            "compare_ns": 50755459,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           },
           {
             "iterations": 100,
             "pairs": 10000,
-            "setup_ns": 21500,
-            "compare_ns": 49904833,
+            "setup_ns": 20000,
+            "compare_ns": 50312417,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 19041,
+            "compare_ns": 49927375,
+            "warmup_checksum": 17581698066250149768,
+            "checksum": 11210444024254992181
+          },
+          {
+            "iterations": 100,
+            "pairs": 10000,
+            "setup_ns": 20334,
+            "compare_ns": 50167958,
             "warmup_checksum": 17581698066250149768,
             "checksum": 11210444024254992181
           }
