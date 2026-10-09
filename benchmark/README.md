@@ -48,3 +48,10 @@ input checksums, and every sample. See the [runner](benchmark_bindings.py),
 [Rust loop](compare_pairs.rs), and [C++ loop](benchmark.h) for the implementation.
 The ICU4X developers discuss broader library-design tradeoffs in
 [Announcing ICU4X 1.0](https://blog.unicode.org/2022/09/announcing-icu4x-10.html).
+
+## Handwritten FFI example
+
+The complete manual implementation is also available: the [C interface](manual_ffi.h),
+[Rust bridge](manual_ffi.rs), and [C++ owner](manual_collator.h). An optional
+[manual FFI comparison](manual-ffi.md) measures this implementation against
+Crubit using the same compiled Rust adapter.

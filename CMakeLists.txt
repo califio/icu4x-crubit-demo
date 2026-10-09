@@ -39,6 +39,8 @@ add_executable(icu4x-demo main.cc contacts.cc)
 target_compile_options(icu4x-demo PRIVATE -Wno-nontrivial-memcall)
 target_link_libraries(icu4x-demo PRIVATE collation)
 
+add_subdirectory(benchmark)
+
 # Historical implementation used only by the comparison executable.
 include(cmake/icu4c.cmake)
 add_executable(icu4c-demo legacy/main.cc contacts.cc)

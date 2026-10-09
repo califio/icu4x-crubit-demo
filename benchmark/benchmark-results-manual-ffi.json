@@ -1,0 +1,1122 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "rustc": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)",
+  "versions": {
+    "icu4x-demo": "ICU4X 2.3.1 through Crubit"
+  },
+  "build_type": "Release",
+  "asan": false,
+  "pairs": 10000,
+  "iterations": 100,
+  "lifecycle_iterations": 1000,
+  "samples": 9,
+  "seed": 30535,
+  "paths": {
+    "manual": "C++ RAII owner calls the adapter through handwritten C FFI",
+    "crubit": "C++ owner calls the same compiled adapter through Crubit"
+  },
+  "adapter_artifact": {
+    "toolchain": "nightly",
+    "adapter_rlib_sha256": "8ba36ef4b69c17c83f926b55c21fa9f7baa155140496c45c17f6333b7e103283",
+    "manual_ffi_source_sha256": "383251230d92f6dac3bfd68cf5d3fb49d52d0dbc9f7f6516194d82b47ec71f87"
+  },
+  "integration_code": {
+    "counting_rule": "Nonblank lines excluding full-line // comments; build files, generated output, and shared timing code excluded",
+    "common": {
+      "files": {
+        "rust/lib.rs": 20,
+        "benchmark/collator_error.h": 12
+      },
+      "total_lines": 32
+    },
+    "manual": {
+      "files": {
+        "benchmark/manual_ffi.rs": 37,
+        "benchmark/manual_ffi.h": 16,
+        "benchmark/manual_collator.h": 38
+      },
+      "total_lines": 91
+    },
+    "crubit": {
+      "files": {
+        "collation.h": 5,
+        "benchmark/crubit_collator.h": 25
+      },
+      "total_lines": 30
+    }
+  },
+  "results": [
+    {
+      "dataset": "short-ascii",
+      "locale": "en-US",
+      "input_sha256": "982434fda41d822d1d55c46f2e428b06bc338a24aaf57043f7e899b009f7becd",
+      "summary": {
+        "manual": {
+          "comparison": {
+            "median_ns": 33.372583,
+            "min_ns": 32.28225,
+            "max_ns": 38.943875
+          },
+          "lifecycle": {
+            "median_ns": 452.791,
+            "min_ns": 432.083,
+            "max_ns": 476.042
+          }
+        },
+        "crubit": {
+          "comparison": {
+            "median_ns": 33.657708,
+            "min_ns": 32.604458,
+            "max_ns": 35.628375
+          },
+          "lifecycle": {
+            "median_ns": 433.208,
+            "min_ns": 411.75,
+            "max_ns": 455.0
+          }
+        }
+      },
+      "crubit_over_manual": {
+        "comparison": 1.0085436898905908,
+        "lifecycle": 0.9567504654465305
+      },
+      "sample_order": [
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first"
+      ],
+      "raw_samples": {
+        "manual": [
+          {
+            "setup_ns": 3708,
+            "compare_ns": 38943875,
+            "lifecycle_ns": 476042,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1084,
+            "compare_ns": 34265959,
+            "lifecycle_ns": 432625,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 666,
+            "compare_ns": 32606583,
+            "lifecycle_ns": 470000,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1416,
+            "compare_ns": 32282250,
+            "lifecycle_ns": 432083,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 750,
+            "compare_ns": 33898291,
+            "lifecycle_ns": 461500,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 792,
+            "compare_ns": 33730125,
+            "lifecycle_ns": 439625,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 625,
+            "compare_ns": 33372583,
+            "lifecycle_ns": 451250,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 708,
+            "compare_ns": 32403750,
+            "lifecycle_ns": 465417,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 625,
+            "compare_ns": 32322916,
+            "lifecycle_ns": 452791,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ],
+        "crubit": [
+          {
+            "setup_ns": 458,
+            "compare_ns": 35475750,
+            "lifecycle_ns": 455000,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1041,
+            "compare_ns": 35628375,
+            "lifecycle_ns": 411750,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 459,
+            "compare_ns": 32825500,
+            "lifecycle_ns": 437083,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 625,
+            "compare_ns": 32735458,
+            "lifecycle_ns": 433208,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 417,
+            "compare_ns": 34351333,
+            "lifecycle_ns": 425709,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 584,
+            "compare_ns": 32666291,
+            "lifecycle_ns": 430500,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 33657708,
+            "lifecycle_ns": 434208,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 625,
+            "compare_ns": 34589250,
+            "lifecycle_ns": 431458,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 417,
+            "compare_ns": 32604458,
+            "lifecycle_ns": 435708,
+            "warmup_checksum": -2500,
+            "checksum": -250000,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "latin",
+      "locale": "en-US",
+      "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
+      "summary": {
+        "manual": {
+          "comparison": {
+            "median_ns": 49.527333,
+            "min_ns": 48.982334,
+            "max_ns": 52.273334
+          },
+          "lifecycle": {
+            "median_ns": 466.417,
+            "min_ns": 446.125,
+            "max_ns": 477.792
+          }
+        },
+        "crubit": {
+          "comparison": {
+            "median_ns": 49.710459,
+            "min_ns": 48.739125,
+            "max_ns": 52.175875
+          },
+          "lifecycle": {
+            "median_ns": 432.375,
+            "min_ns": 425.875,
+            "max_ns": 453.75
+          }
+        }
+      },
+      "crubit_over_manual": {
+        "comparison": 1.0036974734738897,
+        "lifecycle": 0.9270138095309562
+      },
+      "sample_order": [
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first"
+      ],
+      "raw_samples": {
+        "manual": [
+          {
+            "setup_ns": 666,
+            "compare_ns": 50098250,
+            "lifecycle_ns": 470625,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 49146417,
+            "lifecycle_ns": 468250,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 666,
+            "compare_ns": 52273334,
+            "lifecycle_ns": 477792,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 49420708,
+            "lifecycle_ns": 446125,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 958,
+            "compare_ns": 48982334,
+            "lifecycle_ns": 448833,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 49527333,
+            "lifecycle_ns": 466417,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 625,
+            "compare_ns": 49680792,
+            "lifecycle_ns": 451750,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 49740459,
+            "lifecycle_ns": 465584,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1042,
+            "compare_ns": 49312750,
+            "lifecycle_ns": 472875,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ],
+        "crubit": [
+          {
+            "setup_ns": 500,
+            "compare_ns": 49710459,
+            "lifecycle_ns": 439583,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1000,
+            "compare_ns": 49978416,
+            "lifecycle_ns": 439083,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 52175875,
+            "lifecycle_ns": 453750,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 542,
+            "compare_ns": 50262250,
+            "lifecycle_ns": 432292,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 416,
+            "compare_ns": 49106916,
+            "lifecycle_ns": 428208,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 708,
+            "compare_ns": 49668500,
+            "lifecycle_ns": 427375,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 416,
+            "compare_ns": 49693667,
+            "lifecycle_ns": 425875,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 875,
+            "compare_ns": 50270791,
+            "lifecycle_ns": 432375,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 375,
+            "compare_ns": 48739125,
+            "lifecycle_ns": 433042,
+            "warmup_checksum": -4973,
+            "checksum": -497300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "latin",
+      "locale": "de-u-co-phonebk",
+      "input_sha256": "3468f184185d1a59a6fddf71ee8ab5ffa9a67b3b3e04c2da392bfa7a540e96b8",
+      "summary": {
+        "manual": {
+          "comparison": {
+            "median_ns": 54.739875,
+            "min_ns": 53.454375,
+            "max_ns": 59.385166
+          },
+          "lifecycle": {
+            "median_ns": 227.0,
+            "min_ns": 204.208,
+            "max_ns": 229.875
+          }
+        },
+        "crubit": {
+          "comparison": {
+            "median_ns": 55.162334,
+            "min_ns": 54.16275,
+            "max_ns": 81.67775
+          },
+          "lifecycle": {
+            "median_ns": 203.875,
+            "min_ns": 194.459,
+            "max_ns": 214.75
+          }
+        }
+      },
+      "crubit_over_manual": {
+        "comparison": 1.0077175733411887,
+        "lifecycle": 0.8981277533039648
+      },
+      "sample_order": [
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first"
+      ],
+      "raw_samples": {
+        "manual": [
+          {
+            "setup_ns": 375,
+            "compare_ns": 54150917,
+            "lifecycle_ns": 227167,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 375,
+            "compare_ns": 53956958,
+            "lifecycle_ns": 212750,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 333,
+            "compare_ns": 54297417,
+            "lifecycle_ns": 212500,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 667,
+            "compare_ns": 59385166,
+            "lifecycle_ns": 229875,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 57892958,
+            "lifecycle_ns": 229333,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 292,
+            "compare_ns": 55089417,
+            "lifecycle_ns": 204208,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 583,
+            "compare_ns": 54739875,
+            "lifecycle_ns": 229208,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 167,
+            "compare_ns": 53454375,
+            "lifecycle_ns": 226042,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 416,
+            "compare_ns": 54803709,
+            "lifecycle_ns": 227000,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ],
+        "crubit": [
+          {
+            "setup_ns": 209,
+            "compare_ns": 54162750,
+            "lifecycle_ns": 200083,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 584,
+            "compare_ns": 54686583,
+            "lifecycle_ns": 194459,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 250,
+            "compare_ns": 81677750,
+            "lifecycle_ns": 207625,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 333,
+            "compare_ns": 58571792,
+            "lifecycle_ns": 214750,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 291,
+            "compare_ns": 57624917,
+            "lifecycle_ns": 208917,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 55529917,
+            "lifecycle_ns": 195750,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 166,
+            "compare_ns": 55162334,
+            "lifecycle_ns": 204875,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 417,
+            "compare_ns": 54501334,
+            "lifecycle_ns": 199875,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 167,
+            "compare_ns": 55085042,
+            "lifecycle_ns": 203875,
+            "warmup_checksum": -4945,
+            "checksum": -494500,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "japanese",
+      "locale": "ja",
+      "input_sha256": "1cd81873aa5aa3f3612553d054ebce45170997bff49d26fa7906f4ff9415266f",
+      "summary": {
+        "manual": {
+          "comparison": {
+            "median_ns": 54.458416,
+            "min_ns": 53.620125,
+            "max_ns": 57.348958
+          },
+          "lifecycle": {
+            "median_ns": 169.083,
+            "min_ns": 164.875,
+            "max_ns": 184.167
+          }
+        },
+        "crubit": {
+          "comparison": {
+            "median_ns": 55.187417,
+            "min_ns": 54.114959,
+            "max_ns": 57.365708
+          },
+          "lifecycle": {
+            "median_ns": 152.625,
+            "min_ns": 146.417,
+            "max_ns": 155.291
+          }
+        }
+      },
+      "crubit_over_manual": {
+        "comparison": 1.0133863790676543,
+        "lifecycle": 0.9026631890846507
+      },
+      "sample_order": [
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first"
+      ],
+      "raw_samples": {
+        "manual": [
+          {
+            "setup_ns": 625,
+            "compare_ns": 57348958,
+            "lifecycle_ns": 183375,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 583,
+            "compare_ns": 54322208,
+            "lifecycle_ns": 184167,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 250,
+            "compare_ns": 54428666,
+            "lifecycle_ns": 168791,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 53620125,
+            "lifecycle_ns": 168042,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 583,
+            "compare_ns": 54944458,
+            "lifecycle_ns": 167083,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 875,
+            "compare_ns": 54458416,
+            "lifecycle_ns": 164875,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 250,
+            "compare_ns": 54298000,
+            "lifecycle_ns": 169083,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 875,
+            "compare_ns": 54879250,
+            "lifecycle_ns": 183333,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 54832750,
+            "lifecycle_ns": 169833,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          }
+        ],
+        "crubit": [
+          {
+            "setup_ns": 250,
+            "compare_ns": 57365708,
+            "lifecycle_ns": 148583,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 292,
+            "compare_ns": 55191125,
+            "lifecycle_ns": 155208,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 125,
+            "compare_ns": 55010375,
+            "lifecycle_ns": 151250,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 333,
+            "compare_ns": 54114959,
+            "lifecycle_ns": 152625,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 166,
+            "compare_ns": 54483458,
+            "lifecycle_ns": 146417,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 167,
+            "compare_ns": 55187417,
+            "lifecycle_ns": 153083,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 125,
+            "compare_ns": 55273666,
+            "lifecycle_ns": 155291,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 208,
+            "compare_ns": 55688292,
+            "lifecycle_ns": 153416,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          },
+          {
+            "setup_ns": 167,
+            "compare_ns": 55119917,
+            "lifecycle_ns": 149125,
+            "warmup_checksum": -4411,
+            "checksum": -441100,
+            "lifecycle_warmup_checksum": 16,
+            "lifecycle_checksum": 1000
+          }
+        ]
+      }
+    },
+    {
+      "dataset": "chinese",
+      "locale": "zh",
+      "input_sha256": "8c580ec65d314e65e2c44492765a5cb3cce24c169ecab7bc6d6281b8157c7f1d",
+      "summary": {
+        "manual": {
+          "comparison": {
+            "median_ns": 51.401541,
+            "min_ns": 50.676,
+            "max_ns": 53.745416
+          },
+          "lifecycle": {
+            "median_ns": 475.5,
+            "min_ns": 436.583,
+            "max_ns": 483.75
+          }
+        },
+        "crubit": {
+          "comparison": {
+            "median_ns": 52.196667,
+            "min_ns": 50.387917,
+            "max_ns": 53.678
+          },
+          "lifecycle": {
+            "median_ns": 444.208,
+            "min_ns": 422.667,
+            "max_ns": 474.125
+          }
+        }
+      },
+      "crubit_over_manual": {
+        "comparison": 1.0154689136654482,
+        "lifecycle": 0.9341913774973712
+      },
+      "sample_order": [
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first",
+        "crubit-first",
+        "manual-first"
+      ],
+      "raw_samples": {
+        "manual": [
+          {
+            "setup_ns": 959,
+            "compare_ns": 51423833,
+            "lifecycle_ns": 451292,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1084,
+            "compare_ns": 50809625,
+            "lifecycle_ns": 473250,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1041,
+            "compare_ns": 51401541,
+            "lifecycle_ns": 475875,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 834,
+            "compare_ns": 50676000,
+            "lifecycle_ns": 475500,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 917,
+            "compare_ns": 50804875,
+            "lifecycle_ns": 436583,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1041,
+            "compare_ns": 52699541,
+            "lifecycle_ns": 483750,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1417,
+            "compare_ns": 53745416,
+            "lifecycle_ns": 480208,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 833,
+            "compare_ns": 51075834,
+            "lifecycle_ns": 467042,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1000,
+            "compare_ns": 51739583,
+            "lifecycle_ns": 476541,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ],
+        "crubit": [
+          {
+            "setup_ns": 417,
+            "compare_ns": 50387917,
+            "lifecycle_ns": 444208,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1084,
+            "compare_ns": 52234625,
+            "lifecycle_ns": 438750,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 417,
+            "compare_ns": 50604833,
+            "lifecycle_ns": 457209,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 1000,
+            "compare_ns": 51569000,
+            "lifecycle_ns": 448667,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 500,
+            "compare_ns": 53292375,
+            "lifecycle_ns": 468125,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 792,
+            "compare_ns": 53678000,
+            "lifecycle_ns": 474125,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 52864667,
+            "lifecycle_ns": 427000,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 875,
+            "compare_ns": 52196667,
+            "lifecycle_ns": 422667,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          },
+          {
+            "setup_ns": 458,
+            "compare_ns": 51356833,
+            "lifecycle_ns": 430084,
+            "warmup_checksum": -4323,
+            "checksum": -432300,
+            "lifecycle_warmup_checksum": -16,
+            "lifecycle_checksum": -1000
+          }
+        ]
+      }
+    }
+  ]
+}

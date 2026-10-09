@@ -64,7 +64,9 @@ printf '%s\n' Zimmermann Müller Andersson | ./build/icu4x-demo --stdin
 
 The [benchmark guide](benchmark/README.md) compares the same Rust `Collator`
 adapter called from Rust and from C++ through Crubit. It includes the measured
-results and reproduction command. Benchmark files are under `benchmark/`.
+results and reproduction command. The complete handwritten C FFI implementation
+and an optional comparison with Crubit are documented in the
+[manual FFI guide](benchmark/manual-ffi.md). Benchmark files are under `benchmark/`.
 
 ## Code layout
 
