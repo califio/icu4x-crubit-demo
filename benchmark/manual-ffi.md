@@ -85,6 +85,6 @@ burden; they do not measure defect rates or Crubit's build-time cost.
 The [raw results](benchmark-results-manual-ffi.json) contain every sample,
 compiler versions, input hashes, an adapter-artifact hash, and per-file line
 counts. See the [runner](benchmark_manual_ffi.py), [shared C++ loop](ffi_bench.cc),
-[manual Rust ABI](manual_ffi.rs), [manual C++ owner](manual_collator.h), and
+[manual Rust ABI](../manual/manual_ffi.rs), [manual C++ owner](../manual/manual_collator.h), and
 [Crubit facade](crubit_collator.h). The ICU4X developers discuss broader library
 tradeoffs in [Announcing ICU4X 1.0](https://blog.unicode.org/2022/09/announcing-icu4x-10.html).

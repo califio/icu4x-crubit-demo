@@ -97,9 +97,9 @@ def make_pairs(dataset, count, seed):
 
 def integration_code():
     groups = {
-        "common": ["rust/lib.rs", "benchmark/collator_error.h"],
-        "manual": ["benchmark/manual_ffi.rs", "benchmark/manual_ffi.h",
-                   "benchmark/manual_collator.h"],
+        "common": ["rust/lib.rs", "manual/collator_error.h"],
+        "manual": ["manual/manual_ffi.rs", "manual/manual_ffi.h",
+                   "manual/manual_collator.h"],
         "crubit": ["collation.h", "benchmark/crubit_collator.h"],
     }
     report = {"counting_rule": "Nonblank lines excluding full-line // comments; "
@@ -139,7 +139,7 @@ def main():
               "samples": args.samples, "seed": args.seed,
               "paths": {"manual": "C++ RAII owner calls the adapter through handwritten C FFI",
                         "crubit": "C++ owner calls the same compiled adapter through Crubit"},
-              "adapter_artifact": json.loads((build / "benchmark/libmanual_ffi.json").read_text()),
+              "adapter_artifact": json.loads((build / "manual/libmanual_ffi.json").read_text()),
               "integration_code": integration_code(), "results": []}
     print(f"{args.pairs:,} pairs × {args.iterations} repetitions; "
           f"{args.lifecycle_iterations:,} lifecycle iterations; {args.samples} paired samples", flush=True)

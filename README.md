@@ -64,9 +64,9 @@ printf '%s\n' Zimmermann Müller Andersson | ./build/icu4x-demo --stdin
 
 The [benchmark guide](benchmark/README.md) compares the same Rust `Collator`
 adapter called from Rust and from C++ through Crubit. It includes the measured
-results and reproduction command. The complete handwritten C FFI implementation
-and an optional comparison with Crubit are documented in the
-[manual FFI guide](benchmark/manual-ffi.md). Benchmark files are under `benchmark/`.
+results and reproduction command. The complete [handwritten C FFI example](manual/README.md)
+is in `manual/`. An optional [comparison with Crubit](benchmark/manual-ffi.md)
+measures both interfaces. Benchmark files are under `benchmark/`.
 
 ## Code layout
 
@@ -76,6 +76,7 @@ The layout follows the [safe-bindings examples](https://github.com/google/safe-b
 main.cc                 C++ application using the Rust-backed collator
 collation.h             Public C++ binding header
 contacts.cc/.h          CLI handling, locale compatibility, and example contacts
+manual/                 Handwritten C FFI, Rust bridge, and C++ owner
 benchmark/             Benchmark sources, runners, and documentation
 rust/lib.rs             Small Rust API around ICU4X
 rust/Cargo.toml          Rust crate definition

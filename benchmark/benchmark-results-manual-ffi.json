@@ -27,15 +27,15 @@
     "common": {
       "files": {
         "rust/lib.rs": 20,
-        "benchmark/collator_error.h": 12
+        "manual/collator_error.h": 12
       },
       "total_lines": 32
     },
     "manual": {
       "files": {
-        "benchmark/manual_ffi.rs": 37,
-        "benchmark/manual_ffi.h": 16,
-        "benchmark/manual_collator.h": 38
+        "manual/manual_ffi.rs": 37,
+        "manual/manual_ffi.h": 16,
+        "manual/manual_collator.h": 38
       },
       "total_lines": 91
     },

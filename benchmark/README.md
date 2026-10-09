@@ -51,7 +51,8 @@ The ICU4X developers discuss broader library-design tradeoffs in
 
 ## Handwritten FFI example
 
-The complete manual implementation is also available: the [C interface](manual_ffi.h),
-[Rust bridge](manual_ffi.rs), and [C++ owner](manual_collator.h). An optional
+The complete manual implementation is under [`manual/`](../manual/README.md):
+the [C interface](../manual/manual_ffi.h), [Rust bridge](../manual/manual_ffi.rs),
+and [C++ owner](../manual/manual_collator.h). An optional
 [manual FFI comparison](manual-ffi.md) measures this implementation against
 Crubit using the same compiled Rust adapter.
